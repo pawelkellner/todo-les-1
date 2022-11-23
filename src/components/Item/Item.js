@@ -6,12 +6,9 @@ const Item = (props) => {
     const [className, setClassname ] = useState("todo__item")
 
     useEffect(() =>{
-        setDone(props.done);
-    }, [])
-
-    useEffect(() =>{
         if(done){
             setClassname("todo__item todo__item--done")
+            setTimeout(() => {setClassname(className + " todo__item--gone")}, 800)
         }else{
             setClassname("todo__item")
         }
